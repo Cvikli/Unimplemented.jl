@@ -4,7 +4,7 @@ export @unimplemented, @interface
 
 macro unimplemented(func) 
 	func_desc  = ""
-	isa(func.args[end],Expr) && func.args[end].head == :block && @warn("Interface function shuold have no implementation for now... USE the function alone like: fn(...) ")
+	isa(func, Expr) && isa(func.args[end], Expr) && func.args[end].head == :block && @warn("Interface function shuold have no implementation for now... USE the function alone like: fn(...) ")
 	func.head == :(=)    && (func_desc = func.args[1])
 	func.head == :call   && (func_desc = func)
 	func.head == :where  && (func_desc = func)
