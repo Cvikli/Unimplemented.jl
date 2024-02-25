@@ -1,5 +1,6 @@
 module Unimplemented
 
+export @unimplemented, @interface
 
 macro unimplemented(func) 
 	func_desc  = ""
