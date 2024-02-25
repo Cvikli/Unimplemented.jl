@@ -13,7 +13,10 @@ function _memoize_funccall(funccall)
 end
 
 #%%
+using Unimplemented
+# @interface init() 
 @interface init(t::Type{TYPE}, args...; kw_args...) where TYPE 
 # @interface init(t::Float32, ars...; kw_args...) 
 # = throw("init(t, args...; kw_args...)")
+# init()
 init(Float32,4,3)
