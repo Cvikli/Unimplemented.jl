@@ -22,6 +22,15 @@ To this:
 @interface func(args...; kw_args...)
 ```
 
+To overload and to avoid Precompilation error. Do: *dispatch like non-overwriting type piracy*. 
+So for example:
+- try to use one or more concrete or abstract type in the function where you are overloading the function. 
+- or even define the function on another type that wasn't included in the `@interfaced` functions type. *Type piracy!*
+```
+func(x::MyStruct, b; by) = @show x(b, by)
+```
 
 # Note
 The whole code is one file with literally 1 function. 
+
+REALLY important topic and this is how this package(`@interface`) should work also: https://discourse.julialang.org/t/how-bad-is-type-piracy-actually/37913/10
